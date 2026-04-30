@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+    color: #1c1c1c; 
+}
+
+/* header */
+header h1 {
+    background-color: #C0C6C7;
+    padding: 5px;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.about {
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.about span {
+    font-weight: bold;
+}
+
+.about h2 {
+    padding: 20px;
+}
+
+.target {
+    padding: 40px;
+    width: 750px;
+    margin: 0 auto;
+}
+
+.target ul {
+    display: inline-block;
+}
+
+.target li {
+    float: left;
+    list-style-type: disc;
+}
+
+/* main */
+.content {
+    padding: 30px 0 0 30px;
+}
+
+.content h2 {
+    border-bottom: 1px solid #BCC6CC;
+}
+
+a:hover {
+    color: #98afc7;
+}
+
+.lessons {
+    border: 1px solid #BCC6CC;
+    margin-top: 50px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.lessons h2 {
+    text-align: center;
+}
+
+.lesson {
+    padding: 20px 0 0 30px;
+}
+
+.lesson h3 {
+    padding-bottom: 5px;
+}
+
+.lesson p {
+    padding-left: 30px;
+}
+
