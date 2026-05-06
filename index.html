@@ -25,46 +25,72 @@
         </div>
       </div>
     </header>
-    <main>
-      <div class="container">
-        <div class="content">
+    <div class="contents">
+      <div class="content left">
+       <div class="con">
           <h2>プロジェクト課題について</h2>
           <p><strong>プロジェクト内容</strong></p>
           <p>プロジェクト課題で作成したページ：<a href="project.html">project.html</a></p>
         </div>
-        <div class="content">
+      </div>
+      <div class="content">
+        <div Class="con">
           <h2>数当てゲーム</h2>
           <p><strong>ゲーム概要</strong></p>
           <p>数当てゲームのページ：<a href="kazuate.html">kazuate.html</a></p>
         </div>
-
-        <div class="lessons">
-          <h2>各授業回の学習事項</h2>
-          <div class="lesson">
-            <h3>第1回 WWW と HTML</h3>
-            <p>ハイパーリンク（通称「リンク」）によって Web ページが接続されていて，ユーザはリンクを辿ってたくさんの Web ページを見ることができる．<br>Web ページではテキストに加えて，画像や音声，動画などマルチメディアコンテンツや PDF などのファイルにアクセスできる．</p>
-            <p><strong>WWW について</strong></p>
-            <p>ページを提供する仕組みのことを WWW という.<br>インターネット上には膨大な数の Web ページが存在する．その中からユーザが見たい Web ページを指定する方法として，URL がある．ブラウザのアドレス欄に表示されているのが URL である．URL にはプロトコル、サーバ、パスが含まれている．</p>
-            <p><strong>HTML について</strong></p>
-            <p>Web ページの構造を指定するための記述．ページは見出しや本文，箇条書き，図表などでできているが，このようなページの構造を記述するのが HTML (Hypertext Markup Language)である．Web ページを構成する「部品」の１つであり、他にはCSS, JavaScript, 画像・音声・動画がある．</p>
-            <p>演習の成果：<a href="practice-html/elements.html">演習1-4: HTMLのさまざまな要素</a></p>
-          </div>
-
-          <div class="lesson">
-            <h3>第2回 CSS によるWebページの装飾</h3>
-            <p>演習の成果：<a href="practice-css/browser-intro.html">ウェブブラウザの紹介</a></p>
-          </div>
-          <div class="lesson">
-            <h3>第3回 JavaScript の基本</h3>
-          </div>
-          <div class="lesson">
-            <h3>第4回 DOM と JavaScript</h3>
-          </div>
-          <div class="lesson">
-            <h3>第5回 イベント処理</h3>
-          </div>
-        </div>
       </div>
-    </main>
+    </div>
+
+
+    <div class="lessons">
+      <h2>各授業回の学習事項</h2>
+      <div class="lesson">
+      <h3>第1回 WWW と HTML</h3>
+        <p>ハイパーリンク（通称「リンク」）によって Web ページが接続されていて，ユーザはリンクを辿ってたくさんの Web ページを見ることができる．<br>Web ページではテキストに加えて，画像や音声，動画などマルチメディアコンテンツや PDF などのファイルにアクセスできる．</p>
+        <p><strong>WWW について</strong></p>
+        <p>ページを提供する仕組みのことを WWW という.<br>インターネット上には膨大な数の Web ページが存在する．その中からユーザが見たい Web ページを指定する方法として，URL がある．ブラウザのアドレス欄に表示されているのが URL である．URL にはプロトコル、サーバ、パスが含まれている．</p>
+        <p><strong>HTML について</strong></p>
+        <p>Web ページの構造を指定するための記述．ページは見出しや本文，箇条書き，図表などでできているが，このようなページの構造を記述するのが HTML (Hypertext Markup Language)である．Web ページを構成する「部品」の１つであり、他にはCSS, JavaScript, 画像・音声・動画がある．</p>
+        <p><strong>演習の成果：</strong><a href="practice-html/elements.html">演習1-4: HTMLのさまざまな要素</a></p>
+      </div>
+      <div class="lesson">
+        <h3>第2回 CSS によるWebページの装飾</h3>
+        <p><strong>CSS について</strong></p>
+        <p>
+          ページを装飾する記述を CSS という。CSS は見た目を変更するものである。<br>コーディングする順番は、HTML が先に与えられて、その装飾をする CSS を記述するという形となる。
+          <br>まずはHTML の head要素に link要素を記述する。これはCSSファイルに従ってページを装飾するという意味を持つ。
+        </p>
+        <p><strong>CSS の書式について</strong></p>
+        <p>
+          <ul>
+            <li>セレクタ は装飾したい要素を指定</li>
+            <li>プロパティ名 は装飾の種類を指定</li>
+            <li>プロパティ値 は装飾の具体的な値</li>
+            <li>「プロパティ名: プロパティ値」の記述は中括弧の中で繰り返し記述可能</li>
+            <li>上記の書式全体を2つ以上記述可能</li>
+          </ul>
+        </p>
+        <p><strong>セレクタについて</strong></p>
+        <p>CSS で装飾する対象要素を指定する記述.たくさんの書き方が存在する。</p>
+        <ul>
+          <li>lass 属性は同じクラス名を2個以上の要素につけることができる</li>
+          <li>id 属性は，一つの HTML 文書の中で固有の id をつけなくてはならない（同じ id 属性を持つ要素が2つある状態は NG）</li>
+        </ul>
+        <p><strong>プロパティと値について</strong></p>
+        <p>プロパティ名は様々あり，CSS においてあらかじめ定められた名前だけが使用できる．また，プロパティ値については，プロパティ名に対して許された値だけを指定できる．例えば，color に対しては色の名前か次に出てくるカラーコードだけが指定可能である．一方 font-size に対して，サイズを意味する値だけが指定可能である．</p>
+        <p><strong>演習の成果：</strong><a href="practice-css/browser-intro.html">ウェブブラウザの紹介</a></p>
+      </div>
+      <div class="lesson">
+        <h3>第3回 JavaScript の基本</h3>
+      </div>
+      <div class="lesson">
+        <h3>第4回 DOM と JavaScript</h3>
+      </div>
+      <div class="lesson">
+        <h3>第5回 イベント処理</h3>
+      </div>
+    </div>
+    
   </body>
 </html>
