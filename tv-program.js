@@ -1,16 +1,37 @@
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
 function print(data) {
-  console.log("1件目の検索結果");
-  console.log("タイトル：ピタゴラスイッチ");
-  console.log("サブタイトル：ミニ▽きょうのロボット▽かさねておえかき");
-  console.log("チャンネル：NHK総合");
-  console.log("開始時刻：2026年04月27日 04時15分");
-  console.log("終了時刻：2026年04月27日 04時20日");
-  console.log("番組説明：私たちがふだん暮らしている中に隠れている、さまざまな法則や不思議な構造、面白い考え方を、アニメ、歌、体操、ピタゴラ装置など多彩なコーナーで紹介します。");
-  console.log("出演者：サンドウィッチマン");
+  let info = [
+    {
+      start_time: "2026年04月27日 04時15分",
+      end_time: "2026年04月27日 04時20日",
+      channel: "NHK総合",
+      title: "ピタゴラスイッチ",
+      subtitle: "ミニ▽きょうのロボット▽かさねておえかき",
+      content: "私たちがふだん暮らしている中に隠れている、さまざまな法則や不思議な構造、面白い考え方を、アニメ、歌、体操、ピタゴラ装置など多彩なコーナーで紹介します。",
+      act: "サンドウィッチマン"
+    },
+    {
+      start_time: "2026年04月28日 04時15分",
+      end_time: "2026年04月28日 05時00分",
+      channel: "NHK総合",
+      title: "国際報道2026",
+      subtitle: "「ロシアの工作員」にされるウクライナの若者たち",
+      content: "ＳＮＳなどでの勧誘を通じて未成年の若者が放火や爆弾の製造といった破壊工作に加担させられてしまうケースが、戦時下のウクライナで深刻化。その実態に迫る。",
+      act: "辻浩平，藤重博貴，山澤里奈"
+    }
+  ]
 
-  
+  for (let n = 0; n < info.length; n++) {
+    console.log((n + 1) + "件目の検索結果");
+    console.log("開始時刻：" + info[n].start_time);
+    console.log("終了時刻：" + info[n].end_time);
+    console.log("チャンネル：" + info[n].channel);
+    console.log("サブタイトル：" + info[n].subtitle);
+    console.log("番組説明：" + info[n].content);
+    console.log("出演者：" + info[n].act);
+    console.log();
+  }
 }
 
 // 課題5-1 の関数 printDom() はここに記述すること
