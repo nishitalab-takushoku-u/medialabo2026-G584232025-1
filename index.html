@@ -42,7 +42,6 @@
       </div>
     </div>
 
-
     <div class="lessons">
       <h2>各授業回の学習事項</h2>
       <div class="lesson">
@@ -83,6 +82,46 @@
       </div>
       <div class="lesson">
         <h3>第3回 JavaScript の基本</h3>
+        <p><strong>JavaScript について</strong></p>
+        <p>
+          JavaScript は Web ページ上で複雑な機能を実現するプログラミング言語である．<br>  
+          Web ページを開いた直後や，ボタンを押したときに JavaScript プログラムが実行される．<br>
+          ページの自動更新やアニメーションなど動きのあるページを実現するために JavaScript プログラムを使う．
+        </p>
+        <p><strong>Java と JavaScriot について</strong></p>
+        <p>基本的には Java と JavaScript は別の仕組みを持つ言語である．</p>
+        <p>最も大きな違いは，インタプリタ言語とコンパイル言語である．</p>
+        <p>Java はコンパイル言語である．Java プログラムを実行するには javac でコンパイルしたのち，java で実行するという2段階の手順を踏む必要がある．</p>
+        <p>一方，JavaScript はインタプリタ言語 である． JavaScript プログラムは，そのまま 1行ずつ読み取りながら実行される．Java におけるコンパイルという一手間がない．</p>
+        <p>インタプリタ型言語の JavaScript には次の特徴がある．</p>
+        <ul>
+          <li>コンパイルの一手間がないため，プログラムを書いて実行するまでの作業が少なくて済む</li>
+          <li>間違ったプログラムを実行すると実行時エラーが発生する．コンパイルエラーはない</li>
+          <li>実行中に値の型が決まる、動的型付けがある</li>
+        </ul>
+        <p>手軽に実行とデバッグを繰り返すことができるという長所に対して，実行時エラーや動的型付けにより，エラーが起こっていても気づかないことがあったり，エラーの原因を見つけるのが難しいという短所がある．</p>
+        <p><strong>ブラウザ API について</strong></p>
+        <p>
+          Firefox などの標準的なブラウザは，JavaScript プログラムを通じて実行可能な便利な機能（API）を提供してくれる．<br>
+          具体的には次のブラウザ API を利用することができる．
+        </p>
+        <ul>
+          <li>DOM API: プログラムを通じて HTML 要素や属性，CSS などの追加・編集・削除を可能にしてくれる</li>
+          <li>Geolocation API: プログラムを通じて 現在位置などを取得できます</li>
+          <li>Canvas と WebGL: 2D と 3D のグラフィックスのプログラミングを可能にします</li>
+          <li>WebRTC: リアルタイムに通信を行ったり，ビデオストリームを使った遠隔会議を実現できます</li>
+        </ul>
+        <p><strong>サードパーティ API について</strong></p>
+        <p>
+          インターネット上には JavaScript プログラムからの通信を受け付けるサーバがある．<br>
+          通信によってサーバが持つ情報を提供してくれたり，サーバ上に情報を登録してくれたりする．<br>
+          このような Web サービスの例を示す．
+        </p>
+        <ul>
+          <li>Twitter API: ツイートを検索し取得できる</li>
+          <li>Google Map API: Web ページにマップを貼り付けることができる</li>
+        </ul>
+        <p><strong>演習の成果：</strong><a href="practice-js/obj-practice.html">JavaScript のオブジェクト</a></p>
       </div>
       <div class="lesson">
         <h3>第4回 DOM と JavaScript</h3>
