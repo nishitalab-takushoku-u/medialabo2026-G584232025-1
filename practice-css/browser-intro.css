@@ -8,7 +8,7 @@ p.info {
 
 h1 {
 	color: white;
-	text-shadow: 1px 3px 10px navy;
+	text-shadow: 1px 1px 3px navy;
 }
 
 h2 {
@@ -26,7 +26,8 @@ div#zentai > div {
 	margin-left: 5px;
 	background-color: #ffefaf;
 	height: 200px;
-	margin: 5px;
+	margin: 10px;
+	padding: 5px;
 }
 
 div#zentai > div > h2 {
