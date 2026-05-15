@@ -59,9 +59,17 @@ header h1 {
     border-right: 1px solid #eeeeee;
 }
 
+.right {
+    border-left: 1px solid #eeeeee;
+}
+
 .con {
     margin: 0 50px;
     padding: 20px;
+}
+
+.con span {
+    padding: 10px;
 }
 
 .content h2 {
@@ -91,12 +99,20 @@ a:hover {
     font-style: italic;
 }
 
-.lesson li {
+.first li {
     list-style-type: disc;
 }
 
-.lesson ul {
+.first {
     padding-left: 60px;
+}
+
+.second  {
+    padding-left: 20px;
+}
+
+.second li {
+    list-style-type: circle;
 }
 
 .lesson h3 {
@@ -107,3 +123,6 @@ a:hover {
     padding-left: 30px;
 }
 
+ul span {
+    padding: 10px;
+}

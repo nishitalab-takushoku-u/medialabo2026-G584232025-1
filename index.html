@@ -33,11 +33,25 @@
           <p>プロジェクト課題で作成したページ：<a href="project.html">project.html</a></p>
         </div>
       </div>
-      <div class="content">
+      <div class="content right">
         <div Class="con">
           <h2>数当てゲーム</h2>
           <p><strong>ゲーム概要</strong></p>
-          <p>数当てゲームのページ：<a href="kazuate.html">kazuate.html</a></p>
+          <p>
+            HTMLとJavaScriptを用いて数当てゲームを作成した。
+            まず，kazuate.html にユーザが数字を入力するための input 要素と，判定を行うための button 要素を設置した。
+            また，JavaScriptから各要素を取得して操作できるように，それぞれに id 属性を設定した。
+            さらに，結果を表示するための p 要素や，予想回数を表示する span 要素も用意した。
+          </p>
+          <P>
+            次に，kazuate.js では，正解となる数字を保存する変数 kotae と，ユーザが何回予想したかを記録する変数 kaisu を定義した。
+            そして，ボタンが押された際に実行される関数 hantei() を作成し，予想回数を1回ずつ増やして画面へ表示する処理を実装した。
+            また，条件分岐を利用して，正解した場合，不正解の場合，回数制限を超えた場合などで表示するメッセージを変更した。
+            不正解時には，答えが予想より大きいか小さいかを表示し，3回目の失敗時には正解も表示するようにした。
+            最後に，button 要素へイベントハンドラを登録し，クリック操作によってゲームが進行するように完成させた。
+          </P>
+          <Span></Span>
+          <p><strong>数当てゲームのページ：</strong><a href="kazuate.html">kazuate.html</a></p>
         </div>
       </div>
     </div>
@@ -62,7 +76,7 @@
         </p>
         <p><strong>CSS の書式について</strong></p>
         <p>
-          <ul>
+          <ul class="first">
             <li>セレクタ は装飾したい要素を指定</li>
             <li>プロパティ名 は装飾の種類を指定</li>
             <li>プロパティ値 は装飾の具体的な値</li>
@@ -72,7 +86,7 @@
         </p>
         <p><strong>セレクタについて</strong></p>
         <p>CSS で装飾する対象要素を指定する記述.たくさんの書き方が存在する。</p>
-        <ul>
+        <ul class="first">
           <li>lass 属性は同じクラス名を2個以上の要素につけることができる</li>
           <li>id 属性は，一つの HTML 文書の中で固有の id をつけなくてはならない（同じ id 属性を持つ要素が2つある状態は NG）</li>
         </ul>
@@ -94,7 +108,7 @@
         <p>Java はコンパイル言語である．Java プログラムを実行するには javac でコンパイルしたのち，java で実行するという2段階の手順を踏む必要がある．</p>
         <p>一方，JavaScript はインタプリタ言語 である． JavaScript プログラムは，そのまま 1行ずつ読み取りながら実行される．Java におけるコンパイルという一手間がない．</p>
         <p>インタプリタ型言語の JavaScript には次の特徴がある．</p>
-        <ul>
+        <ul class="first">
           <li>コンパイルの一手間がないため，プログラムを書いて実行するまでの作業が少なくて済む</li>
           <li>間違ったプログラムを実行すると実行時エラーが発生する．コンパイルエラーはない</li>
           <li>実行中に値の型が決まる、動的型付けがある</li>
@@ -105,7 +119,7 @@
           Firefox などの標準的なブラウザは，JavaScript プログラムを通じて実行可能な便利な機能（API）を提供してくれる．<br>
           具体的には次のブラウザ API を利用することができる．
         </p>
-        <ul>
+        <ul class="first">
           <li>DOM API: プログラムを通じて HTML 要素や属性，CSS などの追加・編集・削除を可能にしてくれる</li>
           <li>Geolocation API: プログラムを通じて 現在位置などを取得できます</li>
           <li>Canvas と WebGL: 2D と 3D のグラフィックスのプログラミングを可能にします</li>
@@ -117,7 +131,7 @@
           通信によってサーバが持つ情報を提供してくれたり，サーバ上に情報を登録してくれたりする．<br>
           このような Web サービスの例を示す．
         </p>
-        <ul>
+        <ul class="first">
           <li>Twitter API: ツイートを検索し取得できる</li>
           <li>Google Map API: Web ページにマップを貼り付けることができる</li>
         </ul>
@@ -125,6 +139,60 @@
       </div>
       <div class="lesson">
         <h3>第4回 DOM と JavaScript</h3>
+        <p><strong>DOM (Document Object Model) について</strong></p>
+        <p>
+          Web コンテンツを表現するデータ構造である．<br>
+          DOM を使用することによって，JavaScript などのプログラムによって，Web コンテンツの内容を読み取ったり，コンテンツに変更を加えたりする処理を書くことができる．<br>
+          DOM と JavaScript を組み合わせることによって，動きのある Web ページを実現できるようになる．
+        </p>
+        <p><strong>input 要素について</strong></p>
+        <p>
+          <ul class="first">
+            <li>input 要素は入力項目を意味します </li>
+            <ul class="second">
+              <li>type 属性は入力する値の種類．type="text" によって，ページにはテキストボックスが表示される．</li>
+              <li>name 属性はこの input 要素の名前</li>
+              <li>size 属性はテキストボックスの横幅</li>
+            </ul>
+            <li>label 要素は入力項目の説明する働きを持つ．</li>
+            <ul class="second">
+              <li>ページ上では単なるテキストとして表示される</li>
+              <li>
+                for 属性は説明する input 要素の id を指定する<br>
+                id の値は HTML 文書全体で一意に指定されるため，label が説明する input 要素はただ1つに定まる．
+              </li>
+            </ul>
+            <li>button はボタンの要素．このボタンをクリックすると次の p 要素にメッセージを表示するのに使う．</li>
+          </ul>
+        </p>
+        <p><strong>JavaScriot の構文</strong></p>
+        <ul class="first">
+          <li>document.querySelector(セレクタ) ... 要素を1つ検索</li>
+          <li>document.querySelectorAll(セレクタ) ... 要素をまとめて検索</li>
+          <span></span>
+          <li>要素.textContent ... 要素のテキストを参照する</li>
+          <li>要素.getAttribute(属性名) ... 要素の属性値を参照する</li>
+          <li>input要素.value ... ユーザが設定した値を参照する</li>
+        </ul>
+        <p><strong>イベントハンドラについて</strong></p>
+        <p>イベント は Web ページ上で起こった動作や出来事のこと．例えば，次のようなイベントがある．</p>
+        <ul class="first">
+          <li>ユーザーがある要素の上をマウスでクリックしたり，ある要素の上にカーソルを持ってくる</li>
+          <li>ユーザーがキーボードのキーを押す</li>
+          <li>ユーザーがブラウザー画面をリサイズしたり閉じたりする</li>
+          <li>ウェブページのロードの完了</li>
+          <li>フォームの送信</li>
+          <li>ビデオが再生中，停止中，再生が終わった</li>
+          <li>エラーの発生</li>
+        </ul>
+        <p>ウェブ開発ツールの「インスペクタ」で要素に登録されたイベントハンドラを確認することができる．</p>
+        <p><strong>今回学んだこと</strong></p>
+        <ul class="first">
+          <li>フォーム要素: ページ上に設置するテキストボックスとボタン（HTML）</li>
+          <li>イベント処理: 「ボタンを押したら何かをする」構文（JavaScript）</li>
+          <li>DOM: ページに設置されているHTML要素の検索方法とテキスト変更方法</li>
+        </ul>
+        <p><strong>演習の成果：</strong><a href="practice-eventdom/tashizan.html">足し算ページ</a></p>
       </div>
       <div class="lesson">
         <h3>第5回 イベント処理</h3>
