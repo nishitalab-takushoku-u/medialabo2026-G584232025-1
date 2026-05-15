@@ -11,7 +11,7 @@ let kaisu = 0;
 let sum = document.querySelector('span#kaisu');
 let answer = document.querySelector('span#answer');
 let result = document.querySelector('p#result');
-let n = 0;
+let answered;
 
 // ボタンを押した後の処理をする関数 hantei() の定義
 function hantei() {
@@ -30,21 +30,19 @@ function hantei() {
   
   // ここから: 正解判定する
   // 　　　　  正解/不正解のときのメッセージを表示する
-  if (kaisu <= 3) {
-    if (n === 1){
-      result.textContent = '答えは ◯ でした．すでにゲームは終わっています';
-    } else if (yosoint === kotae) {
-      result.textContent = '正解です．おめでとう!';
-      n ++;
-    } else if (yosoint > kotae) {
-      result.textContent = 'まちがい．答えはもっと小さいですよ';
-    } else {
-      result.textContent = 'まちがい．答えはもっと大きいですよ';
-    }
-  } else if (kaisu === 3 && yosoint !== kotae) {
-    result.textContent('答えは ◯ でした．すでにゲームは終わっています');
+  if (kaisu >= 4 || answered) {
+    result.textContent = '答えは ' + kotae + ' でした．すでにゲームは終わっています';
+  } else if (yosoint === kotae) {
+    result.textContent = '正解です．おめでとう!';
+    answered = true;
   } else {
-    result.textContent('答えは ◯ でした．すでにゲームは終わっています');
+    if (kaisu === 3) {
+      result.textContent = 'まちがい．残念でした答えは ' + kotae + ' です．';
+    } else if (yosoint < kotae) {
+      result.textContent = 'まちがい．答えはもっと大きいですよ';
+    } else {
+      result.textContent = 'まちがい．答えはもっと小さいですよ';
+    }
   }
 
   // ここまで: 正解判定する
