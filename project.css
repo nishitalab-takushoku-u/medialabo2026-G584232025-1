@@ -63,10 +63,15 @@ a:hover {
     margin-top: 65px;
 }
 
-.channel li {
+.channels li {
     list-style-type: disc;
 }
 
-.channel ul {
+.channels ul {
     padding-left: 20px;
+}
+
+/* main */
+#serch {
+    padding-top: 93px;
 }

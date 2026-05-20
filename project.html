@@ -26,6 +26,7 @@
                     <a href="project.html" class="header-logo">NHKの番組表</a>
                     <div class="header-lists">
                         <ul>
+                            <li><a href="#serch">検索</li>
                             <li><a href="#sougou">総合</a></li>
                             <li><a href="#etere">Eテレ</a></li>
                             <li><a href="#bs">BS</a></li>
@@ -35,9 +36,41 @@
             </div>
         </header>
         <main>
+            <div class="container">
+                <div class="serch-list">
+                    <h2 id="serch">番組の検索結果</h2>
+                    <div class="channel-btn">
+                        <label for="channel">チャンネル</label>
+                        <select name="channel" id="channel">
+                            <option value="">-</option>
+                            <option vlue="sougou">総合</option>
+                            <option vlue="etere">Eテレ</option>
+                            <option vlue="bs">BS</option>
+                        </select>
+                    </div>
+                    <div class="genre-btn">
+                        <label for="genre">ジャンル</label>
+                        <select name="genre" id="genre">
+                            <option value="">-</option>
+                            <option value="0000">ニュース・報道</option>
+                            <option value="0100">スポーツ</option>
+                            <option value="0205">情報・ワイドショー</option>
+                            <option value="0300">ドラマ</option>
+                            <option value="0409">音楽</option>
+                            <option value="0502">バラエティ</option>
+                            <option value="0600">映画</option>
+                            <option value="0700">アニメ</option>
+                            <option value="0800">ドキュメンタリー・教養</option>
+                            <option value="0903">劇場・公演</option>
+                            <option value="1000">趣味・教育</option>
+                            <option value="1100">福祉</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <div class="contents">
                 <div class="container">
-                    <div class="channel">
+                    <div class="channels">
                         <h2>月曜日</h2>
                         <p>検索結果１件</p>
                         <ul>
