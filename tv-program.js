@@ -1,41 +1,69 @@
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
+let count = 0;
 function print(data) {
-  let info = [
-    {
-      start_time: "2026年04月27日 04時15分",
-      end_time: "2026年04月27日 04時20日",
-      channel: "NHK総合",
-      title: "ピタゴラスイッチ",
-      subtitle: "ミニ▽きょうのロボット▽かさねておえかき",
-      content: "私たちがふだん暮らしている中に隠れている、さまざまな法則や不思議な構造、面白い考え方を、アニメ、歌、体操、ピタゴラ装置など多彩なコーナーで紹介します。",
-      act: "サンドウィッチマン"
-    },
-    {
-      start_time: "2026年04月28日 04時15分",
-      end_time: "2026年04月28日 05時00分",
-      channel: "NHK総合",
-      title: "国際報道2026",
-      subtitle: "「ロシアの工作員」にされるウクライナの若者たち",
-      content: "ＳＮＳなどでの勧誘を通じて未成年の若者が放火や爆弾の製造といった破壊工作に加担させられてしまうケースが、戦時下のウクライナで深刻化。その実態に迫る。",
-      act: "辻浩平，藤重博貴，山澤里奈"
-    }
-  ]
-
-  for (let n = 0; n < info.length; n++) {
-    console.log((n + 1) + "件目の検索結果");
-    console.log("開始時刻：" + info[n].start_time);
-    console.log("終了時刻：" + info[n].end_time);
-    console.log("チャンネル：" + info[n].channel);
-    console.log("サブタイトル：" + info[n].subtitle);
-    console.log("番組説明：" + info[n].content);
-    console.log("出演者：" + info[n].act);
+  for (let n of data.list.g1) {
+    count += 1;
+    console.log(count + "件目の検索結果");
+    console.log("開始時刻：" + n.start_time);
+    console.log("終了時刻：" + n.end_time);
+    console.log("チャンネル：" + n.title);
+    console.log("サブタイトル：" + n.subtitle);
+    console.log("番組説明：" + n.content);
+    console.log("出演者：" + n.act);
     console.log();
   }
 }
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
+
+  let d = document.createElement('div');
+  d.setAttribute('id', 'result');
+  let b = document.querySelector('main');
+  b.insertAdjacentElement('beforeend', d);
+
+  let h2, u, l;
+  let c = 0;
+
+  h2 = document.createElement('h2');
+  h2.setAttribute('id', 'title');
+  d.insertAdjacentElement('beforeend', h2);
+  h2.textContent = data.list.g1[0].title;
+
+  u = document.createElement('ul');
+  u.setAttribute('id', 'table');
+  d.insertAdjacentElement('beforeend', u);
+
+  l = document.createElement('li');
+  l.setAttribute('id', 'list');
+  l.textContent = 'サブタイトル：' + data.list.g1[0].subtitle;
+  u.insertAdjacentElement('beforeend', l);
+
+  l = document.createElement('li');
+  l.setAttribute('id', 'list');
+  l.textContent = '開始時刻：' + data.list.g1[0].start_time;
+  u.insertAdjacentElement('beforeend', l);
+
+  l = document.createElement('li');
+  l.setAttribute('id', 'list');
+  l.textContent = '終了時刻：' + data.list.g1[0].end_time;
+  u.insertAdjacentElement('beforeend', l);
+
+  l = document.createElement('li');
+  l.setAttribute('id', 'list');
+  l.textContent = 'チャンネル：' + data.list.g1[0].service.name;
+  u.insertAdjacentElement('beforeend', l);
+
+  l = document.createElement('li');
+  l.setAttribute('id', 'list');
+  l.textContent = '番組説明：' + data.list.g1[0].content;
+  u.insertAdjacentElement('beforeend', l);
+
+  l = document.createElement('li');
+  l.setAttribute('id', 'list');
+  l.textContent = '出演者：' + data.list.g1[0].act;
+  u.insertAdjacentElement('beforeend', l);
 
 }
 
@@ -147,5 +175,5 @@ let data = {
       }
     ]
   }
-};
+}
 

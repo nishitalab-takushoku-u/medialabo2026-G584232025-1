@@ -24,6 +24,7 @@ a:hover {
 }
 
 
+
 /* header */
 .container {
     width: 1200px;
@@ -72,6 +73,27 @@ a:hover {
 }
 
 /* main */
+main {
+    width: 1200px;
+    margin: 0 auto;
+}
+
 #serch {
     padding-top: 93px;
+}
+
+.channels {
+    margin-top: 70px;
+}
+
+#title {
+    padding-top: 15px;
+}
+
+#table {
+    padding-left: 20px;
+}
+
+#list {
+    list-style-type: disc;
 }
