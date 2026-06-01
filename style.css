@@ -46,7 +46,9 @@ header h1 {
 
 /* main */
 .contents {
-    margin-top: 50px;
+    padding-top: 50px;
+    width: 1350px;
+    margin: 0 auto;
 }
 
 .content {
@@ -80,13 +82,16 @@ a:hover {
     color: #98afc7;
 }
 
+.lesson-list {
+    width: 1350px;
+    margin: 0 auto;
+}
+
 .lessons {
-    width: 100%;
-    margin: 100px 50px 50px 50px; 
     display: inline-block;
     border: 1px solid #eeeeee;
     padding: 20px;
-    width: 1310px;
+    width: 1300px;
 }
 
 .lessons h2 {

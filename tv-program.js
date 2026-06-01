@@ -1,6 +1,5 @@
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
-let count = 0;
 function print(data) {
   for (let n of data.list.g1) {
     count += 1;
@@ -15,56 +14,108 @@ function print(data) {
   }
 }
 
+let btn = document.querySelector('button#sendRequest');
+btn.addEventListener('click', sendRequest);
+
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
-
   let d = document.createElement('div');
   d.setAttribute('id', 'result');
   let b = document.querySelector('main');
   b.insertAdjacentElement('beforeend', d);
 
+  let c = document.querySelector('span#count');
+
   let h2, u, l;
-  let c = 0;
+  channel = document.querySelector('select[name="channel"]');
+  channelName = channel.value;
+  if (channelName === 'g1') {
+    let count = data.list.g1.length;
+    c.textContent = '検索結果' + count + '件';
+    for (let n = 0; n < data.list.g1.length; n++) {
+      h2 = document.createElement('h2');
+      h2.setAttribute('id', 'title');
+      d.insertAdjacentElement('beforeend', h2);
+      h2.textContent = data.list.g1[n].title;
 
-  h2 = document.createElement('h2');
-  h2.setAttribute('id', 'title');
-  d.insertAdjacentElement('beforeend', h2);
-  h2.textContent = data.list.g1[0].title;
+      u = document.createElement('ul');
+      u.setAttribute('id', 'table');
+      d.insertAdjacentElement('beforeend', u);
 
-  u = document.createElement('ul');
-  u.setAttribute('id', 'table');
-  d.insertAdjacentElement('beforeend', u);
+      l = document.createElement('li');
+      l.setAttribute('id', 'list');
+      l.textContent = 'サブタイトル：' + data.list.g1[n].subtitle;
+      u.insertAdjacentElement('beforeend', l);
 
-  l = document.createElement('li');
-  l.setAttribute('id', 'list');
-  l.textContent = 'サブタイトル：' + data.list.g1[0].subtitle;
-  u.insertAdjacentElement('beforeend', l);
+      l = document.createElement('li');
+      l.setAttribute('id', 'list');
+      l.textContent = '開始時刻：' + data.list.g1[n].start_time;
+      u.insertAdjacentElement('beforeend', l);
 
-  l = document.createElement('li');
-  l.setAttribute('id', 'list');
-  l.textContent = '開始時刻：' + data.list.g1[0].start_time;
-  u.insertAdjacentElement('beforeend', l);
+      l = document.createElement('li');
+      l.setAttribute('id', 'list');
+      l.textContent = '終了時刻：' + data.list.g1[n].end_time;
+      u.insertAdjacentElement('beforeend', l);
 
-  l = document.createElement('li');
-  l.setAttribute('id', 'list');
-  l.textContent = '終了時刻：' + data.list.g1[0].end_time;
-  u.insertAdjacentElement('beforeend', l);
+      l = document.createElement('li');
+      l.setAttribute('id', 'list');
+      l.textContent = 'チャンネル：' + data.list.g1[n].service.name;
+      u.insertAdjacentElement('beforeend', l);
 
-  l = document.createElement('li');
-  l.setAttribute('id', 'list');
-  l.textContent = 'チャンネル：' + data.list.g1[0].service.name;
-  u.insertAdjacentElement('beforeend', l);
+      l = document.createElement('li');
+      l.setAttribute('id', 'list');
+      l.textContent = '番組説明：' + data.list.g1[n].content;
+      u.insertAdjacentElement('beforeend', l);
 
-  l = document.createElement('li');
-  l.setAttribute('id', 'list');
-  l.textContent = '番組説明：' + data.list.g1[0].content;
-  u.insertAdjacentElement('beforeend', l);
+      l = document.createElement('li');
+      l.setAttribute('id', 'list');
+      l.textContent = '出演者：' + data.list.g1[n].act;
+      u.insertAdjacentElement('beforeend', l);
+    }
+  } else {
+    let count = data.list.e1.length;
+    c.textContent = '検索結果' + count + '件';
+    for (let n = 0; n < data.list.e1.length; n++) {
+      h2 = document.createElement('h2');
+      h2.setAttribute('id', 'title');
+      d.insertAdjacentElement('beforeend', h2);
+      h2.textContent = data.list.e1[n].title;
 
-  l = document.createElement('li');
-  l.setAttribute('id', 'list');
-  l.textContent = '出演者：' + data.list.g1[0].act;
-  u.insertAdjacentElement('beforeend', l);
+      u = document.createElement('ul');
+      u.setAttribute('id', 'table');
+      d.insertAdjacentElement('beforeend', u);
 
+      l = document.createElement('li');
+      l.setAttribute('id', 'list');
+      l.textContent = 'サブタイトル：' + data.list.e1[n].subtitle;
+      u.insertAdjacentElement('beforeend', l);
+
+      l = document.createElement('li');
+      l.setAttribute('id', 'list');
+      l.textContent = '開始時刻：' + data.list.e1[n].start_time;
+      u.insertAdjacentElement('beforeend', l);
+
+      l = document.createElement('li');
+      l.setAttribute('id', 'list');
+      l.textContent = '終了時刻：' + data.list.e1[n].end_time;
+      u.insertAdjacentElement('beforeend', l);
+
+      l = document.createElement('li');
+      l.setAttribute('id', 'list');
+      l.textContent = 'チャンネル：' + data.list.e1[n].service.name;
+      u.insertAdjacentElement('beforeend', l);
+
+      l = document.createElement('li');
+      l.setAttribute('id', 'list');
+      l.textContent = '番組説明：' + data.list.e1[n].content;
+      u.insertAdjacentElement('beforeend', l);
+
+      l = document.createElement('li');
+      l.setAttribute('id', 'list');
+      l.textContent = '出演者：' + data.list.e1[n].act;
+      u.insertAdjacentElement('beforeend', l);
+    }
+  }
 }
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
@@ -74,12 +125,32 @@ function printDom(data) {
 
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 function sendRequest() {
+  let channel = document.querySelector('select[name="channel"]');
+  let channelName = channel.value;
 
+  let genre = document.querySelector('select[name="genres"]');
+  let genresName = genres.value;
+
+  let url = 'https://www.nishita-lab.org/web-contents/jsons/nhk/' + channelName + '-' + genresName + '-j.json';
+
+  axios.get(url)
+    .then(showResult)
+    .catch(showError)
+    .then(finish);
 }
 
 // 課題6-1: 通信が成功した時の処理は以下に記述
 function showResult(resp) {
+  let data = resp.data;
+  if (typeof data == 'string') {
+    data = JSON.parse(data);
+  }
 
+  let delet = document.querySelector('div#result');
+  if (delet != null) {
+    delet.remove();
+  }
+  printDom(data);
 }
 
 // 課題6-1: 通信エラーが発生した時の処理
