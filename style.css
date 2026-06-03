@@ -8,7 +8,12 @@
 
 /* header */
 header h1 {
-    padding: 30px 0;
+    padding-top: 30px;
+}
+
+.information {
+    padding-bottom: 25px;
+    text-align: right;
 }
 
 .container {
@@ -130,4 +135,21 @@ a:hover {
 
 ul span {
     padding: 10px;
+}
+
+
+.coments {
+    background-color: #eeeeee;
+    margin-top: 40px;
+    margin-bottom: 45px;
+    padding-bottom: 30px;
+}
+
+.coments h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+.coment {
+    padding: 0 50px;
 }
